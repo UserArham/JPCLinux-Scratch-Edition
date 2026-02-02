@@ -1,0 +1,79 @@
+// Variables
+$font-family: "Segoe UI Light", "Segoe UI", Arial, sans-serif;
+$bg-gradient: linear-gradient(135deg, #0b5ed7, #003c8f);
+$text-color: #ffffff;
+$active-color: #9fd1ff;
+$overlay-bg: rgba(0, 0, 0, 0.35);
+$overlay-blur: 6px;
+$iframe-width: 485px;
+$iframe-height: 402px;
+
+// Body
+body {
+  font-family: $font-family;
+  background: $bg-gradient;
+  color: $text-color;
+  margin: 0;
+  padding: 20px;
+
+  h1 { font-weight: 300; margin-bottom: 20px; }
+  h2 { font-weight: 300; margin: 0 0 10px 0; }
+  h3 { font-weight: 300; margin: 0 0 10px 0; opacity: 0.85; }
+
+  .container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .os-list {
+      background: $overlay-bg;
+      backdrop-filter: blur($overlay-blur);
+      padding: 15px 18px;
+      border-radius: 8px;
+      min-width: 240px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 8px 4px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+          cursor: pointer;
+
+          &:last-child { border-bottom: none; }
+
+          &.active { color: $active-color; font-weight: 400; }
+        }
+      }
+    }
+
+    .iframes {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .iframe-box {
+        background: #000;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+
+        iframe {
+          display: block;
+          border-radius: 4px;
+          background: #000;
+          width: 100%;
+          max-width: $iframe-width;
+          height: $iframe-height;
+        }
+
+        h3 { margin-top: 16px; }
+      }
+    }
+  }
+
+  .hint { margin-top: 20px; font-size: 13px; opacity: 0.8; }
+}
