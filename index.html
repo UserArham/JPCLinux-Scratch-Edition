@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Operating System Gallery</title>
+  <!-- Link to compiled SASS CSS -->
+  <link rel="stylesheet" href="styles.scss">
+</head>
+<body>
+
+  <h1>Operating System Gallery</h1>
+
+  <div class="container">
+
+    <!-- OS LIST -->
+    <div class="os-list">
+      <h2>Systems</h2>
+      <ul id="osList">
+        <li class="active">Windows 3.1</li>
+        <li>Windows 95</li>
+        <li>Windows 98</li>
+        <li>Windows 2000</li>
+        <li>Windows XP</li>
+        <li>Windows Vista</li>
+        <li>Windows 7</li>
+        <li>Windows 8 (Old)</li>
+        <li>Windows 10</li>
+        <li>Windows 11</li>
+        <li>Other-Android</li>
+      </ul>
+    </div>
+
+    <!-- IFRAMES -->
+    <div class="iframes">
+
+      <!-- WINDOWS 3.1 -->
+      <div class="iframe-box">
+        <h2>Windows 3.1</h2>
+        <iframe src="https://scratch.mit.edu/projects/3242775/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS 95 -->
+      <div class="iframe-box">
+        <h2>Windows 95</h2>
+        <iframe src="https://scratch.mit.edu/projects/564499318/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS 98 -->
+      <div class="iframe-box">
+        <h2>Windows 98</h2>
+        <iframe src="https://scratch.mit.edu/projects/3241241/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS 2000 -->
+      <div class="iframe-box">
+        <h2>Windows 2000</h2>
+        <iframe src="https://scratch.mit.edu/projects/384765648/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS XP -->
+      <div class="iframe-box">
+        <h2>Windows XP</h2>
+        <iframe src="https://scratch.mit.edu/projects/1273557120/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS VISTA -->
+      <div class="iframe-box">
+        <h2>Windows Vista</h2>
+        <iframe src="https://scratch.mit.edu/projects/1273585033/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS 7 -->
+      <div class="iframe-box">
+        <h2>Windows 7</h2>
+        <iframe src="https://scratch.mit.edu/projects/1273566678/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS 8 (OLD) -->
+      <div class="iframe-box">
+        <h2>Windows 8 (Old – JPCLinux / v86 Compatible)</h2>
+        <iframe src="https://scratch.mit.edu/projects/1273827404/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS 10 -->
+      <div class="iframe-box">
+        <h2>Windows 10</h2>
+        <iframe src="https://scratch.mit.edu/projects/1273563839/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- WINDOWS 11 -->
+      <div class="iframe-box">
+        <h2>Windows 11</h2>
+        <iframe src="https://scratch.mit.edu/projects/554147954/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+
+      <!-- OTHER-ANDROID SECTION -->
+      <div class="iframe-box">
+        <h2>Other-Android</h2>
+
+        <h3>Android 5</h3>
+        <iframe src="https://scratch.mit.edu/projects/1273804141/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+        <h3>Android 2.3</h3>
+        <iframe src="https://scratch.mit.edu/projects/1273802824/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+        <h3>Nougat</h3>
+        <iframe src="https://scratch.mit.edu/projects/1273808342/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hint">
+    Font: Segoe UI Light • Windows & Other-Android Scratch simulations
+  </div>
+
+  <script>
+    const listItems = document.querySelectorAll("#osList li");
+
+    listItems.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        listItems.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+
+        // Scroll to corresponding iframe
+        const iframeBoxes = document.querySelectorAll(".iframe-box");
+        if (iframeBoxes[index]) {
+          iframeBoxes[index].scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
